@@ -22,3 +22,26 @@
 	</div>
 	<button type="submit" class="btn btn-primary">Submit</button>
 </form>
+	<div class="container">   
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Title</th>
+              <th scope="col">Description</th>
+              <th scope="col">Details</th>
+            </tr>
+          </thead>
+          <tbody>
+                @foreach(var concept in ViewBag.concepts)
+                {
+                   <tr>
+                    <td>@concept.title</td>
+                    <td>@concept.description</td>
+                    <td>@concept.details</td>
+                   </tr> 
+                }                           
+          </tbody>
+        </table>
+     
+    </div>
+

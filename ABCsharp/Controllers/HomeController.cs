@@ -31,7 +31,17 @@ namespace ABCsharp.Controllers
 
         public IActionResult AddConcept()
         {
+            List<ConceptModel> concepts = new List<ConceptModel>();
+
+            using (var db = new StartContext())
+            {
+                concepts = db.Concepts.ToList();
+            }
+
+            ViewBag.concepts = concepts;
+
             return View();
+            
         }
 
         [HttpPost]
