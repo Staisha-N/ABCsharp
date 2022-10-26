@@ -18,7 +18,7 @@ namespace ABCsharp.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult AddConcept()
         {
             return View();
         }
@@ -29,7 +29,7 @@ namespace ABCsharp.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-        public IActionResult AddConcept()
+        public IActionResult Privacy()
         {
             List<ConceptModel> concepts = new List<ConceptModel>();
 
@@ -38,24 +38,26 @@ namespace ABCsharp.Controllers
                 concepts = db.Concepts.ToList();
             }
 
-            ViewBag.concepts = concepts;
+            TempData["concepts"] = concepts;
 
             return View();
             
         }
 
+        
+
         [HttpPost]
         public IActionResult AddConcept(ConceptModel concept)
         {
-            
+
             if (ModelState.IsValid)
             {
-                using(var db = new StartContext())
+                using (var db = new StartContext())
                 {
                     db.Add(concept);
                     db.SaveChanges();
                 }
-            }                
+            }
             return View();
         }
     }
