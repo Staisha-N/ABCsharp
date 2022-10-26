@@ -1,0 +1,24 @@
+﻿@model ABCsharp.Models.ConceptModel
+
+@{
+	ViewData["Title"] = "AddConcept";
+}
+
+<form action ="/home/AddConcept" method="post">
+	<div class="form-group">
+		<label for="inputTitle" class="form-label">Title</label>
+		<input type="text" class="form-control" id="inputTitle" placeholder="Add a title here" asp-for="title">
+		<span asp-validation-for="title" class="text-danger"></span>
+	</div>
+	<div class="form-group">
+		<label for="inputDescription" class="form-label">Description</label>
+		<input type="text" class="form-control" id="inputDescription" placeholder="Add a description here" asp-for="description">
+		<span asp-validation-for="description" class="text-danger"></span>
+	</div>
+	<div class="form-group">
+		<label for="inputDetails" class="form-label">Details</label>
+		<textarea class="form-control" id="inputDetails" rows="25" asp-for="details"></textarea>
+		<span asp-validation-for="details" class="text-danger"></span>
+	</div>
+	<button type="submit" class="btn btn-primary">Submit</button>
+</form>
