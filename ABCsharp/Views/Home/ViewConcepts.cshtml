@@ -6,30 +6,24 @@
 
 <p>Use this page to detail your site's privacy policy.</p>
 
-<div class="container">  
-        
-        @if(concepts != null) {
-        <table class="table">
-          <thead>
-            <tr>
-              <th scope="col">Title</th>
-              <th scope="col">Description</th>
-              <th scope="col">Details</th>
-            </tr>
-          </thead>
-          <tbody>
-                @foreach(var concept in concepts)
-                {
-                   <tr>
-                    <td>@concept.title</td>
-                    <td>@concept.description</td>
-                    <td>@concept.details</td>
-                   </tr> 
-                }                           
-          </tbody>
-        </table>
-        }
-        
-     
-    </div>
 
+  <div class="container">
+    <div class="grid">
+
+      @foreach(var concept in concepts) {
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <span>@concept.title</span>
+                <div>@concept.description</div>
+              </div>
+              <div class="flip-card-back">
+                <br />
+                <div>@concept.details</div>
+              </div>
+            </div>
+          </div>
+      }
+
+    </div>
+  </div>
