@@ -4,26 +4,52 @@
 }
 <h1>@ViewData["Title"]</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
+<p>Here are the all the concepts that I have learned about C# so far.</p>
 
 
   <div class="container">
-    <div class="grid">
+     <div class="searchstuff">
+        
+         <div style="display: inline-block; padding-right: 10px">
+            <form action="/Home/SearchConcept" method="post">
+                <div class="form-group" style="display: inline-block; padding-right: 10px">
+                    <label>Search by title:   </label>
+                    <input type="text" name="searchTerm"/>
+                </div>
+                <div style="display: inline-block; padding: 10px">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>          
+            </form>
+         </div>
+         <div style="display: inline-block;">
+            <input type="button" value="Reset" class="btn btn-primary" onclick="location.href='@Url.Action("ResetConcepts", "Home")'" />       
+         </div>
+        
+     </div>
+        
+      
+      <div class="grid">
 
-      @foreach(var concept in concepts) {
-          <div class="flip-card">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <span>@concept.title</span>
-                <div>@concept.description</div>
+        @if (concepts != null)
+        {
+            @foreach(var concept in concepts) {
+              <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <span>@concept.title</span>
+                    <div>@concept.description</div>
+                  </div>
+                  <div class="flip-card-back">
+                    <br />
+                    <div>@concept.details</div>
+                  </div>
+                </div>
               </div>
-              <div class="flip-card-back">
-                <br />
-                <div>@concept.details</div>
-              </div>
-            </div>
-          </div>
-      }
+            }
+
+        }
+
+      
 
     </div>
   </div>
