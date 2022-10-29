@@ -26,7 +26,7 @@ p {
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
 }
 
 .flip-card-title {
@@ -36,6 +36,10 @@ body {
     margin-right: 20px;
     margin-left: 20px;
     font-family: Courier New, Courier, monospace, sans-serif;
+}
+
+.welcome-page {
+    font-family: 'Poppins', sans-serif;
 }
 
 .flip-card-description {
@@ -87,12 +91,14 @@ body {
 }
 
 .flip-card-front {
-    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+    background-image: linear-gradient(43deg, #aa915d 0%,#dec07b 46%, #fff397 100%);
     color: black;
 }
 
 .flip-card-back {
-    background-image: linear-gradient(43deg, #4158D0 0%,#C850C0 46%, #FFCC70 100%);
+    background-image: linear-gradient(43deg, #fff397 0%,#ffffff, #ffffff 100%);
     color: black;
     transform: rotateY(180deg);
+    padding: 30px;
 }
+
