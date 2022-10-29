@@ -6,6 +6,6 @@ namespace ABCsharp.Models
     {
         public DbSet<ConceptModel>? Concepts { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder options) =>
-            options.UseSqlite(@"Data Source=C:\Users\cprrc\OneDrive\Desktop\Coding\ABCsharp\ABCsharp\wwwroot\data\ConceptData.db");
+            options.UseSqlite(@"Data Source=" + Path.Combine(Directory.GetCurrentDirectory(), "ConceptData.db"));
     }
 }
