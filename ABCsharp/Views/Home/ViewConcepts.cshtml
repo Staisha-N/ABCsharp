@@ -2,6 +2,12 @@
     ViewData["Title"] = "View Concepts";
     List<ConceptModel> concepts = TempData["concepts"] as List<ConceptModel>;
 }
+<head><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+
+</head>
+
 <h1>@ViewData["Title"]</h1>
 
 <p>Here are the all the concepts that I have learned about C# so far.</p>
@@ -36,12 +42,16 @@
               <div class="flip-card">
                 <div class="flip-card-inner">
                   <div class="flip-card-front">
-                    <span>@concept.title</span>
-                    <div>@concept.description</div>
+                    <h1 class="flip-card-title">@concept.title</h1>
+                    <p class="flip-card-description">@concept.description</p>
                   </div>
                   <div class="flip-card-back">
                     <br />
-                    <div>@concept.details</div>
+                    <p>@concept.details</p>
+                    <form asp-action="UpdateConcept" asp-controller="Home" method="post">
+                        <input type="hidden" asp-for="@concept.id" value="@concept.id"/>
+                        <button type="submit" class="btn btn-success">Update</button>
+                    </form>
                   </div>
                 </div>
               </div>

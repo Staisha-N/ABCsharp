@@ -77,7 +77,31 @@ namespace ABCsharp.Controllers
             
         }
 
-        
+        [HttpPost]
+        public IActionResult UpdateConcept(ConceptModel concept)
+        {
+            using(var db = new StartContext())
+            {
+                var conceptTemp = db.Concepts.Where(x => x.id == concept.id).FirstOrDefault();
+                TempData["conceptTemp"] = conceptTemp;
+            }
+
+            return View();
+        }
+        public IActionResult UpdateConceptStep2(ConceptModel concept)
+        {
+            using(var db = new StartContext())
+            {
+                var UpdateConcept = db.Concepts.Where(x => x.id == concept.id).FirstOrDefault();
+                UpdateConcept.title = concept.title;
+                UpdateConcept.description = concept.description;
+                UpdateConcept.details = concept.details;
+
+                db.SaveChanges();
+            }
+            
+            return View("Index");
+        }
 
         [HttpPost]
         public IActionResult AddConcept(ConceptModel concept)
