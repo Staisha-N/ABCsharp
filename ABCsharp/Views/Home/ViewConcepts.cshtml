@@ -48,9 +48,13 @@
                   <div class="flip-card-back">
                     <br />
                     <p>@concept.details</p>
-                    <form asp-action="UpdateConcept" asp-controller="Home" method="post">
+                    <form asp-action="UpdateConcept" asp-controller="Home" method="post" style="display: inline-block;">
                         <input type="hidden" asp-for="@concept.id" value="@concept.id"/>
                         <button type="submit" class="btn btn-success">Update</button>
+                    </form>
+                    <form action="/Home/DeleteConcept" method="post" style="display: inline-block;">
+                        <input type="hidden" asp-for="@concept.id" value="@concept.id"/>
+                        <button type="submit" class="btn btn-success">Delete</button>
                     </form>
                   </div>
                 </div>

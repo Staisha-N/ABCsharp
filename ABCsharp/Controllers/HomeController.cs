@@ -117,5 +117,19 @@ namespace ABCsharp.Controllers
             }
             return View();
         }
+
+        [HttpPost]
+        public IActionResult DeleteConcept(ConceptModel concept)
+        {
+            var conceptToDelete = new ConceptModel() { id= concept.id };
+
+                using (var db = new StartContext())
+                {
+                    db.Remove(conceptToDelete);
+                    db.SaveChanges();
+                }
+            
+            return View("Index");
+        }
     }
 }
