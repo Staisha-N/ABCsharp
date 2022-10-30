@@ -2,10 +2,16 @@ html {
   font-size: 30px;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   html {
     font-size: 16px;
   }
+}
+
+@media (min-width: 760px) {
+    html {
+        font-size: 16px;
+    }
 }
 
 html {
@@ -25,6 +31,7 @@ h2 {
     text-align: center;
     font-size: 80px;
     font-family: 'Poppins', sans-serif;
+    text-overflow: ellipsis;
 }
 
 a {
@@ -66,7 +73,8 @@ body {
 }
 
 .grid {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     flex-wrap: wrap;
     margin: -10px;
 }
@@ -79,7 +87,7 @@ body {
 .flip-card {
     border-style: hidden;
     background-color: transparent;
-    width: 700px !important;
+    width: 600px;
     height: 500px;
 }
 
