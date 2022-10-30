@@ -23,12 +23,12 @@
                     <input type="text" name="searchTerm"/>
                 </div>
                 <div style="display: inline-block; padding: 10px">
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="button-style">Submit</button>
                 </div>          
             </form>
          </div>
          <div style="display: inline-block;">
-            <input type="button" value="Reset" class="btn btn-primary" onclick="location.href='@Url.Action("ResetConcepts", "Home")'" />       
+            <input type="button" value="Reset" class="button-style" onclick="location.href='@Url.Action("ResetConcepts", "Home")'" />       
          </div>
         
      </div>
@@ -42,7 +42,7 @@
               <div class="flip-card">
                 <div class="flip-card-inner">
                   <div class="flip-card-front" style="padding: 20px;">
-                    <h1 class="flip-card-title">@concept.title</h1>
+                    <h2 class="flip-card-title">@concept.title</h2>
                     <p class="flip-card-description">@concept.description</p>
                   </div>
                   <div class="flip-card-back">
@@ -50,11 +50,11 @@
                     <p>@concept.details</p>
                     <form asp-action="UpdateConcept" asp-controller="Home" method="post" style="display: inline-block;">
                         <input type="hidden" asp-for="@concept.id" value="@concept.id"/>
-                        <button type="submit" class="btn btn-success">Update</button>
+                        <button type="submit" class="button-style">Edit</button>
                     </form>
                     <form action="/Home/DeleteConcept" method="post" style="display: inline-block;">
                         <input type="hidden" asp-for="@concept.id" value="@concept.id"/>
-                        <button type="submit" class="btn btn-success">Delete</button>
+                        <button type="submit" class="button-style">Delete</button>
                     </form>
                   </div>
                 </div>

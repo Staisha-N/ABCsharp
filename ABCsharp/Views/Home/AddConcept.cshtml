@@ -1,8 +1,16 @@
 ﻿@model ABCsharp.Models.ConceptModel
 
 @{
-    ViewData["Title"] = "AddConcept";
+    ViewData["Title"] = "Add a concept";
 }
+
+<head><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+
+</head>
+
+<h1>@ViewData["Title"]</h1>
 
 <form action ="/home/AddConcept" method="post">
 	<div class="form-group">
@@ -20,7 +28,7 @@
 		<textarea class="form-control" id="inputDetails" rows="25" asp-for="details"></textarea>
 		<span asp-validation-for="details" class="text-danger"></span>
 	</div>
-	<button type="submit" class="btn btn-primary">Submit</button>
+	<button type="submit" class="button-style" style="margin: 10px;">Submit</button>
 </form>
 
 

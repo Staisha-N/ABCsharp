@@ -2,19 +2,29 @@
     ViewData["Title"] = "Welcome";
 }
 
-<div class="welcome-page" style="font-family:'Poppins', sans-serif;">
-    <h1>@ViewData["Title"]</h1>
+<head><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
 
-    <p>This website contains a list of concepts that I have learned about the C# programming language.</p>
+</head>
+
+    <h1>@ViewData["Title"]</h1>
+    <div style="text-align: center;">
+        <p>This website contains a list of concepts that I have learned about the C# programming language.</p>
+        <a href="/Home/ViewConcepts" >Click here to view concepts</a>
+    </div>
+    
+    
 
     <body>
+        
         <div  style="text-align: center;">
             <img src="http://atlas-content-cdn.pixelsquid.com/stock-images/hashtag-gold-pound-sign-AEo1d87-600.jpg" alt="Hash tag" width="400" height="400">
         </div>
     
     </body>
 
-</div>
+
 
 
 

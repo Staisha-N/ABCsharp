@@ -15,8 +15,23 @@ html {
 
 h1 {
     text-align: center;
-    font-size: 80px; 
+    font-size: 80px;
     font-family: 'Poppins', sans-serif;
+    color: goldenrod;
+    
+}
+
+h2 {
+    text-align: center;
+    font-size: 80px;
+    font-family: 'Poppins', sans-serif;
+}
+
+a {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    color: goldenrod;
 }
 
 p {
@@ -102,3 +117,8 @@ body {
     padding: 30px;
 }
 
+.button-style {
+    border-radius: 8px;
+    background-color: #aa915d;
+    color: white;
+}
